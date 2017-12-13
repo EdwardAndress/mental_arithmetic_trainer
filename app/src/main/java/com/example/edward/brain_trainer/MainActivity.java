@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     TextView sumTextView;
     TextView highScoreTextView;
     Boolean gameInProgress;
+    RelativeLayout gameLayout;
+
 
     Button button0;
     Button button1;
@@ -74,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void start(View view) {
         startButton.setVisibility(View.INVISIBLE);
+        gameLayout.setVisibility(RelativeLayout.VISIBLE);
+        playAgain(findViewById(R.id.playAgainButton));
     }
 
     public void playAgain(View view) {
@@ -142,9 +147,9 @@ public class MainActivity extends AppCompatActivity {
         button3 = (Button) findViewById(R.id.answerButton3);
         result = (TextView) findViewById(R.id.resultText);
         highScoreTextView = (TextView) findViewById(R.id.highScoreTextView);
+        gameLayout = (RelativeLayout) findViewById(R.id.gameLayout);
 
         generateQuestion();
-        playAgain(findViewById(R.id.playAgainButton));
 
     }
 }
