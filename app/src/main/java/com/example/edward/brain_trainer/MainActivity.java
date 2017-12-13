@@ -3,7 +3,6 @@ package com.example.edward.brain_trainer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -26,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     TextView scoreTextView;
     TextView timerTextView;
     TextView result;
-    int score = new Integer(0);
-    int highScore = new Integer(0);
-    int questionsAsked = new Integer(0);
+    int score = 0;
+    int highScore = 0;
+    int questionsAsked = 0;
     TextView sumTextView;
     TextView highScoreTextView;
     Boolean gameInProgress;
@@ -136,18 +135,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startButton = (Button) findViewById(R.id.startButton);
-        playAgainButton = (Button) findViewById(R.id.playAgainButton);
+        startButton = findViewById(R.id.startButton);
+        playAgainButton = findViewById(R.id.playAgainButton);
         sumTextView = findViewById(R.id.sumTextView);
         timerTextView = findViewById(R.id.timerTextView);
-        scoreTextView = (TextView) findViewById(R.id.scoreTextView);
-        button0 = (Button) findViewById(R.id.answerButton0);
-        button1 = (Button) findViewById(R.id.answerButton1);
-        button2 = (Button) findViewById(R.id.answerButton2);
-        button3 = (Button) findViewById(R.id.answerButton3);
-        result = (TextView) findViewById(R.id.resultText);
-        highScoreTextView = (TextView) findViewById(R.id.highScoreTextView);
-        gameLayout = (RelativeLayout) findViewById(R.id.gameLayout);
+        scoreTextView = findViewById(R.id.scoreTextView);
+        button0 = findViewById(R.id.answerButton0);
+        button1 = findViewById(R.id.answerButton1);
+        button2 = findViewById(R.id.answerButton2);
+        button3 = findViewById(R.id.answerButton3);
+        result = findViewById(R.id.resultText);
+        highScoreTextView = findViewById(R.id.highScoreTextView);
+        gameLayout = findViewById(R.id.gameLayout);
 
         generateQuestion();
 
